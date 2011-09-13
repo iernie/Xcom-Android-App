@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory
+  	>
+	 <ListPreference
+	 	android:key="typePref"
+	 	android:defaultValue="4"
+	 	android:title="Type tur"
+	 	android:summary="Velg om du skal på kort-, lang- eller thailand-tur"
+	 	android:entries="@array/type"
+	 	android:entryValues="@array/typeDay"
+	 	/>
+  </PreferenceCategory>
+</PreferenceScreen>
