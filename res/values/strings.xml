@@ -2,11 +2,10 @@
 <resources>
     <string name="app_name">XCOM11</string>
     
-    <string name="daysStr">dager</string>
-    <string name="endStr">til 3.Datateknikk skal til JAPAN!</string>
-    <string name="endStr2">til 3.Datateknikk skal til Thailand!</string>
-    <string name="endStr3">til vi vet om vi drar eller ikke.</string>
+    <string name="daysStr">DAGER</string>
+    <string name="endStr">til take-off!</string>
     <string name="colon">:</string>
-    <string name="attrs">timer : minutter : sekunder</string>
-    <string name="notrip">Blir ingen Japantur nå :(</string>
+    <string name="h">t</string>
+    <string name="m">m</string>
+    <string name="s">s</string>
 </resources>

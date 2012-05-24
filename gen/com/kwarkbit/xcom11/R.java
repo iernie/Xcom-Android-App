@@ -19,14 +19,18 @@ public final class R {
         public static final int bg=0x7f020001;
         public static final int icon=0x7f020002;
         public static final int logo=0x7f020003;
+        public static final int red=0x7f020004;
     }
     public static final class id {
+        public static final int colon=0x7f080003;
+        public static final int colon2=0x7f080005;
         public static final int days=0x7f080000;
-        public static final int endstr=0x7f080004;
-        public static final int hours=0x7f080001;
-        public static final int minutes=0x7f080002;
-        public static final int preferences=0x7f080005;
-        public static final int seconds=0x7f080003;
+        public static final int daysStr=0x7f080001;
+        public static final int endstr=0x7f080007;
+        public static final int hours=0x7f080002;
+        public static final int minutes=0x7f080004;
+        public static final int preferences=0x7f080008;
+        public static final int seconds=0x7f080006;
     }
     public static final class layout {
         public static final int main=0x7f030000;
@@ -36,13 +40,12 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f060000;
-        public static final int attrs=0x7f060006;
-        public static final int colon=0x7f060005;
+        public static final int colon=0x7f060003;
         public static final int daysStr=0x7f060001;
         public static final int endStr=0x7f060002;
-        public static final int endStr2=0x7f060003;
-        public static final int endStr3=0x7f060004;
-        public static final int notrip=0x7f060007;
+        public static final int h=0x7f060004;
+        public static final int m=0x7f060005;
+        public static final int s=0x7f060006;
     }
     public static final class xml {
         public static final int preferences=0x7f040000;

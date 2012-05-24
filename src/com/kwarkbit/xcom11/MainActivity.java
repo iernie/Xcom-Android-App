@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -14,12 +15,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements OnSharedPreferenceChangeListener{
+//public class MainActivity extends Activity implements OnSharedPreferenceChangeListener{
+public class MainActivity extends Activity {
     /** Called when the activity is first created. */
 	
 	long nowTimeMillis, endTimeMillis;
 	private Handler mHandler = new Handler();
-	TextView days, hours, minutes, seconds, endstr;
+	TextView days, hours, minutes, seconds, endstr, colon;
 	SharedPreferences sp;
 	String day;
 	GregorianCalendar endTime;
@@ -29,25 +31,36 @@ public class MainActivity extends Activity implements OnSharedPreferenceChangeLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        sp = PreferenceManager.getDefaultSharedPreferences(this);
-        sp.registerOnSharedPreferenceChangeListener(this);
-        day = sp.getString("typePref", "4");
+        Typeface ptsansFont = Typeface.createFromAsset(getAssets(),"fonts/ptsans.ttf");
+        Typeface lcdFont = Typeface.createFromAsset(getAssets(),"fonts/lcd.ttf");
+        
+        //sp = PreferenceManager.getDefaultSharedPreferences(this);
+        //sp.registerOnSharedPreferenceChangeListener(this);
+        //day = sp.getString("typePref", "4");
+        
+        days = (TextView) findViewById(R.id.daysStr);
+        days.setTypeface(lcdFont);
         
         days = (TextView) findViewById(R.id.days);
+        days.setTypeface(lcdFont);
         hours = (TextView) findViewById(R.id.hours);
+        hours.setTypeface(lcdFont);
         minutes = (TextView) findViewById(R.id.minutes);
+        minutes.setTypeface(lcdFont);
         seconds = (TextView) findViewById(R.id.seconds);
+        seconds.setTypeface(lcdFont);
         endstr = (TextView) findViewById(R.id.endstr);
+        endstr.setTypeface(ptsansFont);
         
-        if (day.compareTo("10") == 0) {
-			endstr.setText(R.string.endStr2);
-		} else if (day.compareTo("4") == 0) {
-			endstr.setText(R.string.endStr3);
-		} else {
-			endstr.setText(R.string.endStr);
-		}
+        colon = (TextView) findViewById(R.id.colon);
+        colon.setTypeface(lcdFont);
+        colon = (TextView) findViewById(R.id.colon2);
+        colon.setTypeface(lcdFont);
+        
+		endstr.setText(R.string.endStr);
+		endstr.setTypeface(ptsansFont);
 
-        endTime = new GregorianCalendar(2011, 3, Integer.parseInt(day));
+        endTime = new GregorianCalendar(2012, 2, 23, 07, 20);
         endTime.setTimeZone(TimeZone.getTimeZone("GMT+1"));
         
         endTimeMillis = endTime.getTimeInMillis();
@@ -89,7 +102,7 @@ public class MainActivity extends Activity implements OnSharedPreferenceChangeLi
 			mHandler.postDelayed(this, 1000);
     	}
 	};
-	
+	/*
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 	    MenuInflater inflater = getMenuInflater();
@@ -114,18 +127,12 @@ public class MainActivity extends Activity implements OnSharedPreferenceChangeLi
 			String key) {
 		mHandler.removeCallbacks(mUpdateTimeTask);
 		day = sp.getString("typePref", "4");
-		if (day.compareTo("10") == 0) {
-			endstr.setText(R.string.endStr2);
-		} else if (day.compareTo("4") == 0) {
-			endstr.setText(R.string.endStr3);
-		} else {
-			endstr.setText(R.string.endStr);
-		}
+		endstr.setText(R.string.endStr);
 		endTime.set(2011, 3, Integer.parseInt(day));
 		endTimeMillis = endTime.getTimeInMillis();
         mHandler.post(mUpdateTimeTask);
 		
 	}
-    
+    */
            
 }
